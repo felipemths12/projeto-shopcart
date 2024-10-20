@@ -5,16 +5,20 @@ import { useNavigate } from "react-router-dom";
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const emailRegex = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/gi
 
+  const navigate = useNavigate();
+  
+  const buttonEnable = () => {
+    
+    return emailRegex.test(email) && password.length > 7;
+
+  };
   
   const handleClick = () => {
-    const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/
 
-    if (emailRegex.test(email) && password >= 8){
-        alert("Seja bem-vindo!");
-    } else {
-        alert("E-mail e/ou senha inválidas");
-    }
+    navigate("/products");
+
   };
 
   return (
@@ -23,18 +27,28 @@ export default function Login() {
         <div className="login-container">
           <h1 className="title">Login</h1>
           <div className="input-container">
+            <div id="email-input-container">
               <input
                 type="email"
                 onChange={(event) => setEmail(event.target.value)}
                 className="typing"
                 placeholder="Digite seu e-mail"
-              />
+                />
+                {!emailRegex.test(email) && (
+                  <p className="errorMessage">Insira um e-mail válido.</p>
+                )}
+            </div>
+            <div id="password-input-container">
               <input
-                type="password"
+                type="password" 
                 onChange={(event) => setPassword(event.target.value)}
                 className="typing"
                 placeholder="Digite sua senha"
-              />
+                />
+                {password.length < 8 && (
+                  <p className="errorMessage">Digite uma senha válida</p>
+                )}
+            </div>
           </div>
           <label id="labelRemember" htmlFor="rememberMe">
             <input type="checkbox" id="rememberMe" />
@@ -43,7 +57,7 @@ export default function Login() {
                 <a id="forgotText" href="#">Esqueci minha senha</a>
             </p>
           </label>
-          <button onClick={handleClick} id="button">
+          <button onClick={handleClick} id="button" disabled={!buttonEnable()}>
             Login
           </button>
         </div>

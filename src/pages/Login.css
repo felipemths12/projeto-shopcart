@@ -3,6 +3,7 @@
     padding: 50px;
     border-radius: 30px;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    width: 400px;
 }
 
 .title {
@@ -19,4 +20,39 @@
 
 #rememberMe{
     margin-top: 20px;
+}
+
+#button {
+    background-color: rgb(19, 67, 210);
+    transition: 0.5s;
+}
+
+#button:hover {
+    background-color: navy;
+    transition: 0.5s;
+}
+
+
+.typing {
+    background-color: royalblue;
+    color: white;
+    padding: 10px;
+    border-radius: 15px;
+    border-style: none;
+}
+
+.typing::placeholder {
+    color: white;   
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    text-align: center;
+}
+
+#email-input-container{
+    margin-bottom: 20px;
+}
+
+.errorMessage {
+    color: red;
+    font-size: 15px;
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
