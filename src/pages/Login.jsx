@@ -1,6 +1,7 @@
 import "./Login.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import * as EmailValidator from 'email-validator';
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -11,8 +12,8 @@ export default function Login() {
   
   const buttonEnable = () => {
     
-    return emailRegex.test(email) && password.length > 7;
-
+    return EmailValidator.validate(email) && password.length > 7;
+    
   };
   
   const handleClick = () => {
