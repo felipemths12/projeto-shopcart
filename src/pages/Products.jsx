@@ -3,36 +3,44 @@ import { useEffect, useState } from "react";
 
 export default function Products (){
 
-    const [data, setData] = useState([]);
+    const [products, setProducts] = useState([]);
+    const [cart, setCart] = useState([]);
 
     useEffect (() => {
         const result = async () => {
             const response = await fetch ('https://fakestoreapi.com/products');
             const json = await response.json();
-            setData(json)
+            setProducts(json)
         }
 
         result()
 
     }, []);
+
+    const handleClick = (product) => {
+        
+        setCart([...cart, product]);
+
+
+    }
     
-    console.log(data)
+    
 
     return (
         <>
         <div className="container">
-        {data.map((data) => {
+        {products.map((product) => {
             return(
                 <>
                 <div className="products-container">
                     <div className="products-image">
-                        <img src={data.image} width="250" height="250px" />
+                        <img src={product.image} width="250" height="250px" />
                     </div>
-                    <p className="products-title">Produto: {data.title}</p>
-                    <p className="products-price">Preço: R${data.price}</p>
+                    <p className="products-title">Produto: {product.title}</p>
+                    <p className="products-price">Preço: R${product.price}</p>
                     {/* adicionar Link aqui */}
                     <p className="more-details"><strong>Clique aqui para mais detalhes</strong></p>
-                    <button className="add-to-cart">Adicionar ao carrinho</button>
+                    <button onClick={ () => handleClick(product) } className="add-to-cart">Adicionar ao carrinho</button>
                 </div>
                 </>
             )
