@@ -1,6 +1,7 @@
 import "./Products.css"
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import NavBar from "../components/NavBar";
 
 export default function Products (){
 
@@ -29,6 +30,7 @@ export default function Products (){
 
     return (
         <>
+        <NavBar/>
         <div className="container">
         {products.map((product) => {
             return(

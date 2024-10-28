@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom";
+import NavBar from "../components/NavBar";
 import "./ProductsDetails.css"
 
 export default function ProductsDetails() {
@@ -22,6 +23,7 @@ export default function ProductsDetails() {
 
     return(
         <>
+        <NavBar/>
         <div className="details-container">
             <div className="products-details">
                 <img src={product.image} alt={product.description}  width="250" height="250px" />
