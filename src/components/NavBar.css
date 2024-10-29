@@ -49,7 +49,7 @@ li {
     transition: 0.5s;
 }
 
-.title{
+.title-navbar{
     font-size: 20px;
 
 }
@@ -76,3 +76,45 @@ li {
     background-color: rgb(19, 67, 210);
     transition: 0.5s;
  }
+
+ .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cart-title {
+    color: black;
+  }
+
+  .teste{
+    color: black;
+  }
+  
+  .modal-content {
+    background: #fff;
+    padding: 20px;
+    width: 300px;
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  .checkout-button, .close-button {
+    background-color: #ff6600;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .close-button {
+    background-color: #333;
+  }
