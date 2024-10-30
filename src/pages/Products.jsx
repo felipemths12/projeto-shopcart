@@ -29,18 +29,44 @@ export default function Products (){
         } else {
             setCart([...cart, { ...product, quantity: 1 }]);
         }
-    }
+    };
 
 
     const handleCartClick = () => {
         setIsCartOpen(!isCartOpen);
-    }
+    };
+
+    const calculateTotalPrice = () => {
+        return cart.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2);
+    };
+    
+    const increaseQuantity = (id) => {
+        const increase = cart.map(item =>
+            item.id === id ? { ...item, quantity: item.quantity + 1 } : item
+        )
+        setCart(increase);
+    };
+
+    const decreaseQuantity = (id) => {
+        const decrease = cart.map(item =>
+            item.id === id && item.quantity > 1 ? { ...item, quantity: item.quantity - 1 } : item
+        );
+        setCart(decrease);
+    };
+
+
+    const removeItem = (id) => {
+        const remove = cart.filter(item => item.id !== id)
+        setCart(remove);
+        
+    };
+    
     
     
 
     return (
         <>
-        <NavBar cart={cart} isCartOpen={isCartOpen} onCartClick={handleCartClick}/>
+        <NavBar cart={cart} isCartOpen={isCartOpen} onCartClick={handleCartClick} calculateTotalPrice={calculateTotalPrice} removeItem={removeItem} decreaseQuantity={decreaseQuantity} increaseQuantity={increaseQuantity}/>
         <div className="container">
         {products.map((product) => {
             return(
