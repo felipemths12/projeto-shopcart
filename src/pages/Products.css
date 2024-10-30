@@ -1,49 +1,47 @@
 .container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    row-gap: 30px;
-    column-gap: 30px;
-    background-color: white;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    border-radius: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 30px;
+  column-gap: 30px;
+  background-color: white;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  border-radius: 30px;
 }
 
-
 .products-title {
-    color: black;
+  color: black;
 }
 
 .products-price {
-    color: black;
+  color: black;
 }
-
 
 .products-container {
-    padding: 50px;
-    border-style: none;
-    transition: 0.1s;
-    border-radius: 30px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 50px;
+  border-style: none;
+  transition: 0.1s;
+  border-radius: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.products-container:hover{
-    border: 2px;
-    border-style:solid;
-    border-color: rgb(19, 67, 210);
-    transition: 0.1s;
+.products-container:hover {
+  border: 2px;
+  border-style: solid;
+  border-color: rgb(19, 67, 210);
+  transition: 0.1s;
 }
 
 .more-details {
-    color: black;
+  color: black;
 }
 
 .add-to-cart {
-    background-color: rgb(19, 67, 210);
-    transition: 0.5s;
+  background-color: rgb(19, 67, 210);
+  transition: 0.5s;
 }
 
-.add-to-cart:hover{
-    background-color: navy;
-    transition: 0.5s;
+.add-to-cart:hover {
+  background-color: navy;
+  transition: 0.5s;
 }

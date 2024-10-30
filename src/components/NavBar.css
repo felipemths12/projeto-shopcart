@@ -1,117 +1,116 @@
 li {
-    display: flex;
-    color: black;
-    align-items: center;
+  display: flex;
+  color: black;
+  align-items: center;
 }
 
 .back {
-    justify-content: start;
-    align-items: center;
-    transition: 0.5s;
+  justify-content: start;
+  align-items: center;
+  transition: 0.5s;
 }
 
 .cart {
-    justify-content: end;
-    align-items: center;
-    transition: 0.5s;
+  justify-content: end;
+  align-items: center;
+  transition: 0.5s;
 }
 
 .navbar {
-    background-color: white;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    border-radius: 30px;
-    margin-bottom: 30px;
+  background-color: white;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  border-radius: 30px;
+  margin-bottom: 30px;
 }
 
 .navbar ul {
-    display: flex;
-    align-items: center; /* Center items vertically */
-    list-style: none;
-    padding: 20px;
-    padding-left: 0px;
-    margin: 0;
-    width: 100%;
-    justify-content: space-between; /* Distribute space between items */
+  display: flex;
+  align-items: center; /* Center items vertically */
+  list-style: none;
+  padding: 20px;
+  padding-left: 0px;
+  margin: 0;
+  width: 100%;
+  justify-content: space-between; /* Distribute space between items */
 }
 
-.back:hover{
-    background-color: rgb(19, 67, 210);
-    border-radius: 10px;
-    padding: 10px;
-    transition: 0.5s;
+.back:hover {
+  background-color: rgb(19, 67, 210);
+  border-radius: 10px;
+  padding: 10px;
+  transition: 0.5s;
 }
 
-.cart:hover{
-    background-color: rgb(19, 67, 210);
-    border-radius: 10px;
-    padding: 10px;
-    transition: 0.5s;
+.cart:hover {
+  background-color: rgb(19, 67, 210);
+  border-radius: 10px;
+  padding: 10px;
+  transition: 0.5s;
 }
 
-.title-navbar{
-    font-size: 20px;
-
+.title-navbar {
+  font-size: 20px;
 }
 
 .bback {
-    border: none;
-    background-color: white;
-    color: black;
-    transition: 0.5s;
+  border: none;
+  background-color: white;
+  color: black;
+  transition: 0.5s;
 }
 .bback:hover {
-   background-color: rgb(19, 67, 210);
-   transition: 0.5s;
+  background-color: rgb(19, 67, 210);
+  transition: 0.5s;
 }
 
 .ccart {
-    border: none;
-    background-color: white;
-    color: black;
-    transition: 0.5s;
+  border: none;
+  background-color: white;
+  color: black;
+  transition: 0.5s;
 }
 
 .ccart:hover {
-    background-color: rgb(19, 67, 210);
-    transition: 0.5s;
- }
+  background-color: rgb(19, 67, 210);
+  transition: 0.5s;
+}
 
- .modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  .cart-title {
-    color: black;
-    border-style: solid;
-    border: 1px;
-    border-color: black;
-  }
+.cart-title {
+  color: black;
+  border-style: solid;
+  border: 1px;
+  border-color: black;
+}
 
-  .teste{
-    color: black;
-  }
+.teste {
+  color: black;
+}
 
-  .total{
-    color: black;
-  }
-  
-  .modal-content {
-    background: #fff;
-    padding: 20px;
-    width: 300px;
-    border-radius: 8px;
-    text-align: center;
-  }
-    /* .checkout-button, .close-button {
+.total {
+  color: black;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  width: 300px;
+  border-radius: 8px;
+  text-align: center;
+}
+/* .checkout-button, .close-button {
     background-color: #ff6600;
     color: #fff;
     border: none;
@@ -120,24 +119,23 @@ li {
     cursor: pointer;
     margin-top: 10px;
   } */
-  
-  .close-button {
-    background-color: rgb(19, 67, 210);
-    transition: 0.5s;
-  }
 
-  .close-button:hover{
-    background-color: navy;
-    transition: 0.5s
-  }
-
-  
-.actionButtons{
-    background-color: rgb(19, 67, 210);
-    transition: 0.5s;
+.close-button {
+  background-color: rgb(19, 67, 210);
+  transition: 0.5s;
 }
 
-.actionButtons:hover{
-    background-color: navy;
-    transition: 0.5s;
+.close-button:hover {
+  background-color: navy;
+  transition: 0.5s;
+}
+
+.actionButtons {
+  background-color: rgb(19, 67, 210);
+  transition: 0.5s;
+}
+
+.actionButtons:hover {
+  background-color: navy;
+  transition: 0.5s;
 }

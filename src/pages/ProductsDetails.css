@@ -1,10 +1,13 @@
 .details-container {
-    background-color: white;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    border-radius: 30px;
+  background-color: white;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  border-radius: 30px;
 }
 
-.name, .value, .description, .rate {
-    color: black;
+.name,
+.value,
+.description,
+.rate {
+  color: black;
 }
