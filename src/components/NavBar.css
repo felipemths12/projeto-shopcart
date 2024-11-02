@@ -110,15 +110,15 @@ li {
   border-radius: 8px;
   text-align: center;
 }
-/* .checkout-button, .close-button {
-    background-color: #ff6600;
-    color: #fff;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
-  } */
+.checkout-button {
+  background-color: rgb(19, 67, 210);
+  transition: 0.5s;
+}
+
+.checkout-button:hover {
+  background-color: navy;
+  transition: 0.5s;
+}
 
 .close-button {
   background-color: rgb(19, 67, 210);

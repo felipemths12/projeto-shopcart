@@ -10,6 +10,7 @@ export default function NavBar({
   removeItem,
   decreaseQuantity,
   increaseQuantity,
+  goToCheckout,
 }) {
   const navigate = useNavigate();
 
@@ -74,14 +75,13 @@ export default function NavBar({
                     </div>
                   ))}
                   <p className="total"> Total: R${calculateTotalPrice()}</p>
+                  <button onClick={goToCheckout} className="checkout-button">
+                    Finalizar compra
+                  </button>
                 </ul>
               ) : (
                 <p className="teste">Seu carrinho está vazio.</p>
               )}
-              {/* Botão de Checkout */}
-              {/* <button onClick={goToCheckout} className="checkout-button">
-              Ir para o Checkout
-              </button> */}
             </div>
           </div>
         )}

@@ -1,12 +1,14 @@
 import "./Products.css";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import NavBar from "../components/NavBar";
 
 export default function Products() {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const result = async () => {
@@ -64,6 +66,10 @@ export default function Products() {
     setCart(remove);
   };
 
+  const goToCheckout = () => {
+    navigate("/checkout", { state: { productsCart: cart }});
+  }
+
   return (
     <>
       <NavBar
@@ -74,6 +80,7 @@ export default function Products() {
         removeItem={removeItem}
         decreaseQuantity={decreaseQuantity}
         increaseQuantity={increaseQuantity}
+        goToCheckout={goToCheckout}
       />
       <div className="container">
         {products.map((product) => {
