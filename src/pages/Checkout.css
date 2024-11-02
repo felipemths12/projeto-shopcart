@@ -1,0 +1,19 @@
+.checkout-container {
+    background-color: white;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 30px;
+}
+
+.title{
+    color: black;
+}
+
+.item-info {
+    color: black;
+    text-align: center;
+}
+
+.payment-options {
+    color: black;
+}
