@@ -6,8 +6,11 @@ export default function Checkout() {
   const location = useLocation();
   const { productsCart: cart } = location.state || { cart: [] };
   const [itemsCheckout, setItemCheckout] = useState(cart);
+  const [isCheckedPix, setIsCheckedPix] = useState(false);
+  const [isCheckedCC, setIsCheckedCC] = useState(false);
+  const [isCheckedBol, setIsCheckedBol] = useState(false);
 
-  const finish= useNavigate()
+  const finish = useNavigate();
 
   const increaseQuantity = (id) => {
     const increase = itemsCheckout.map((item) =>
@@ -36,10 +39,22 @@ export default function Checkout() {
       .toFixed(2);
   };
 
-  const handleFinish = () =>{
+  const handleCheckboxPix = () => {
+    setIsCheckedPix(!isCheckedPix);
+  };
+
+  const handleCheckboxCC = () => {
+    setIsCheckedCC(!isCheckedCC);
+  };
+
+  const handleCheckboxBol = () => {
+    setIsCheckedBol(!isCheckedBol);
+  };
+
+  const handleFinish = () => {
     alert("Compra finalizada com sucesso");
     finish("/products");
-  }
+  };
 
   return (
     <>
@@ -80,18 +95,42 @@ export default function Checkout() {
           <p className="item-info">Selecione sua forma de pagamento:</p>
           <div className="payment-options">
             <label id="pix-option" htmlFor="pix">
-              <input type="checkbox" name="PIX" id="pix" /> PIX
+              <input
+                type="checkbox"
+                checked={isCheckedPix}
+                onChange={handleCheckboxPix}
+                name="PIX"
+                id="pix"
+              />{" "}
+              PIX
             </label>
             <label htmlFor="credit-card">
-              <input type="checkbox" name="credit-card" id="credit-card" />{" "}
+              <input
+                type="checkbox"
+                checked={isCheckedCC}
+                onChange={handleCheckboxCC}
+                name="credit-card"
+                id="credit-card"
+              />{" "}
               Cartão de Crédito
             </label>
             <label htmlFor="boleto">
-              <input type="checkbox" name="boleto" id="boleto" />
+              <input
+                type="checkbox"
+                checked={isCheckedBol}
+                onChange={handleCheckboxBol}
+                name="boleto"
+                id="boleto"
+              />
               Boleto
             </label>
           </div>
-          <button onClick={() => handleFinish()}>Finalizar compra</button>
+          <button
+            disabled={!isCheckedPix && !isCheckedCC && !isCheckedBol}
+            onClick={() => handleFinish()}
+          >
+            Finalizar compra
+          </button>
         </div>
       </div>
     </>
