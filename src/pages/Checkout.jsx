@@ -9,8 +9,6 @@ export default function Checkout() {
 
   const finish= useNavigate()
 
-  console.log(itemsCheckout);
-
   const increaseQuantity = (id) => {
     const increase = itemsCheckout.map((item) =>
       item.id === id ? { ...item, quantity: item.quantity + 1 } : item
@@ -33,7 +31,7 @@ export default function Checkout() {
   };
 
   const calculateTotalPrice = () => {
-    return cart
+    return itemsCheckout
       .reduce((total, item) => total + item.price * item.quantity, 0)
       .toFixed(2);
   };
@@ -48,7 +46,7 @@ export default function Checkout() {
       <div className="checkout-container">
         <h2 className="title">Checkout</h2>
         <ul>
-          {cart.map((item) => (
+          {itemsCheckout.map((item) => (
             <div className="checkout-item">
               <div className="checkout-item-imagem">
                 <img src={item.image} width="50px" height="50px" />
