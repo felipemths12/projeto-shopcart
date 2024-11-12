@@ -5,6 +5,20 @@
     border-radius: 30px;
 }
 
+.checkout-item-image {
+    grid-column: span 2;
+    text-align: center;
+}
+
+.checkout-item {
+  display: grid;
+  padding: 20px;
+  /* grid-template-columns: 1fr 1fr; */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  row-gap: 30px;
+  column-gap: 30px;
+}
+
 .title{
     color: black;
 }
@@ -17,3 +31,37 @@
 .payment-options {
     color: black;
 }
+
+.actionButtons {
+    background-color: rgb(19, 67, 210);
+    transition: 0.5s;
+  }
+  
+  .actionButtons:hover {
+    background-color: navy;
+    transition: 0.5s;
+  }
+  
+  .rButton {
+    background-color: red;
+    transition: 0.5s;
+  }
+  
+  .rButton:hover {
+   background-color: darkred;
+   transition: 0.5s;
+  }
+
+  .finish {
+    background-color: rgb(19, 67, 210);
+    transition: 0.5s;
+  }
+
+  .finish:hover{
+    background-color: navy;
+    transition: 0.5s;
+  }
+
+  .finish-container{
+    padding: 20px;
+  }

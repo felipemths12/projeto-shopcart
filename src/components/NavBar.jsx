@@ -21,7 +21,7 @@ export default function NavBar({
   return (
     <>
       <div className="navbar">
-        <ul>
+        <ul className="external ul">
           <li className="back">
             <button className="bback" onClick={handleBackClick}>
               VOLTAR
@@ -45,7 +45,7 @@ export default function NavBar({
               </button>
               <h2 className="cart-title">Carrinho</h2>
               {cart.length > 0 ? (
-                <ul>
+                <div className="cart-container">
                   {cart.map((item) => (
                     <div className="cart-item">
                       <div className="cart-item-image">
@@ -67,7 +67,7 @@ export default function NavBar({
                         +
                       </button>
                       <button
-                        className="actionButtons"
+                        className="rButton"
                         onClick={() => removeItem(item.id)}
                       >
                         Remover
@@ -78,7 +78,7 @@ export default function NavBar({
                   <button onClick={goToCheckout} className="checkout-button">
                     Finalizar compra
                   </button>
-                </ul>
+                </div>
               ) : (
                 <p className="teste">Seu carrinho está vazio.</p>
               )}

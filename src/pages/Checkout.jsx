@@ -60,39 +60,40 @@ export default function Checkout() {
     <>
       <div className="checkout-container">
         <h2 className="title">Checkout</h2>
-        <ul>
           {itemsCheckout.map((item) => (
             <div className="checkout-item">
+              <div className="checkout-item-container">
               <div className="checkout-item-imagem">
                 <img src={item.image} width="50px" height="50px" />
               </div>
+
               <p className="item-info">Produto: {item.title}</p>
               <p className="item-info">Quantidade: {item.quantity}</p>
               <p className="item-info">Preço: R${item.price}</p>
               <button
-                className="action-buttons"
+                className="actionButtons"
                 onClick={() => increaseQuantity(item.id)}
-              >
+                >
                 +
               </button>
               <button
-                className="action-buttons"
+                className="actionButtons"
                 onClick={() => decreaseQuantity(item.id)}
-              >
+                >
                 -
               </button>
               <button
-                className="action-buttons"
+                className="rButton"
                 onClick={() => removeItem(item.id)}
-              >
+                >
                 Remover
               </button>
             </div>
+                </div>
           ))}
-        </ul>
         <h3 className="item-info">Total: R${calculateTotalPrice()}</h3>
         <div className="payment-details">
-          <p className="item-info">Selecione sua forma de pagamento:</p>
+          <p className="item-info"><strong>Selecione sua forma de pagamento:</strong></p>
           <div className="payment-options">
             <label id="pix-option" htmlFor="pix">
               <input
@@ -125,12 +126,15 @@ export default function Checkout() {
               Boleto
             </label>
           </div>
+          <div className="finish-container">
           <button
             disabled={!isCheckedPix && !isCheckedCC && !isCheckedBol}
             onClick={() => handleFinish()}
-          >
+            className="finish"
+            >
             Finalizar compra
           </button>
+          </div>
         </div>
       </div>
     </>
