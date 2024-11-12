@@ -70,6 +70,7 @@ export default function Checkout() {
               <p className="item-info">Produto: {item.title}</p>
               <p className="item-info">Quantidade: {item.quantity}</p>
               <p className="item-info">Preço: R${item.price}</p>
+              <div className="button-container">
               <button
                 className="actionButtons"
                 onClick={() => increaseQuantity(item.id)}
@@ -82,12 +83,15 @@ export default function Checkout() {
                 >
                 -
               </button>
+              </div>
+              <div className="remover">
               <button
                 className="rButton"
                 onClick={() => removeItem(item.id)}
                 >
                 Remover
               </button>
+              </div>
             </div>
                 </div>
           ))}

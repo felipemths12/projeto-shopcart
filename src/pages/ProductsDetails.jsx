@@ -19,7 +19,9 @@ export default function ProductsDetails() {
 
   return (
     <>
-      <NavBar />
+      <NavBar 
+        hideCartButton={true}
+      />
       <div className="details-container">
         <div className="products-details">
           <img
@@ -31,7 +33,6 @@ export default function ProductsDetails() {
           <p className="name">Nome: {product.title}</p>
           <p className="value">Valor: R${product.price}</p>
           <p className="description">{product.description}</p>
-          {/* <p className="rate">Avaliação: {product.rating.rate} {product.rating.count}</p> */}
         </div>
       </div>
     </>

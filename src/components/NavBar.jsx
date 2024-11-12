@@ -1,6 +1,5 @@
-import { useState } from "react";
 import "./Navbar.css";
-import { Link, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export default function NavBar({
   cart,
@@ -11,8 +10,12 @@ export default function NavBar({
   decreaseQuantity,
   increaseQuantity,
   goToCheckout,
+  hideCartButton,
 }) {
   const navigate = useNavigate();
+
+  const location = useLocation();
+  const isDetailsPage = location.pathname.includes("/products/");
 
   const handleBackClick = () => {
     navigate(-1);
@@ -27,14 +30,16 @@ export default function NavBar({
               VOLTAR
             </button>
           </li>
-          <li className="title-navbar">
+          <li className={isDetailsPage ? "shopcart-centered" : "title-navbar"}>
             <strong>ShopCart</strong>
           </li>
-          <li className="cart">
-            <button onClick={onCartClick} className="ccart">
-              CARRINHO
-            </button>
-          </li>
+          {!hideCartButton && (
+            <li className="cart">
+              <button onClick={onCartClick} className="ccart">
+                CARRINHO
+              </button>
+            </li>
+          )}
         </ul>
 
         {isCartOpen && (
@@ -54,27 +59,33 @@ export default function NavBar({
                       <p className="teste">Produto: {item.title}</p>
                       <p className="teste">R${item.price}</p>
                       <p className="teste">Quantidade: {item.quantity}</p>
+                      <div className="button-container">
                       <button
                         className="actionButtons"
                         onClick={() => decreaseQuantity(item.id)}
-                      >
+                        >
                         -
                       </button>
                       <button
                         className="actionButtons"
                         onClick={() => increaseQuantity(item.id)}
-                      >
+                        >
                         +
                       </button>
+                      </div>
+                      <div className="remover"> 
                       <button
                         className="rButton"
                         onClick={() => removeItem(item.id)}
-                      >
+                        >
                         Remover
                       </button>
+                      </div>
                     </div>
                   ))}
-                  <p className="total"> Total: R${calculateTotalPrice()}</p>
+                  <p className="total">
+                    <strong>Total: R${calculateTotalPrice()}</strong>
+                  </p>
                   <button onClick={goToCheckout} className="checkout-button">
                     Finalizar compra
                   </button>

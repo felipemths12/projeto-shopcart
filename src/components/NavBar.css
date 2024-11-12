@@ -10,6 +10,19 @@
   transition: 0.5s;
 }
 
+.cart-item {
+  padding: 20px;
+  margin-top: 20px;
+  transition: 0.1s;
+}
+
+.cart-item:hover {
+  border-style: solid;
+  border-color: rgb(19, 67, 210);
+  border-radius: 10px;
+  transition: 0.1s;
+}
+
 .navbar {
   background-color: white;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
@@ -46,6 +59,15 @@
 .title-navbar {
   color: black;
   font-size: 20px;
+}
+
+.shopcart-centered {
+  border-right: 30px;
+  color: black;
+  font-size: 20px;
+  text-align: center;
+  width: 100vw;
+  padding-right: 80px;
 }
 
 .bback {
@@ -128,6 +150,17 @@
 .close-button:hover {
   background-color: navy;
   transition: 0.5s;
+}
+
+.button-container {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.remover {
+  margin-top: 10px;
 }
 
 .actionButtons {

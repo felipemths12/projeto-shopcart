@@ -1,8 +1,10 @@
 .checkout-container {
+    display: grid;
     background-color: white;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
     padding: 10px;
     border-radius: 30px;
+    width: 70vw;
 }
 
 .checkout-item-image {
@@ -17,6 +19,14 @@
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   row-gap: 30px;
   column-gap: 30px;
+  transition: 0.1s;
+}
+
+.checkout-item:hover {
+  transition: 0.1s;
+  border-style: solid;
+  border-radius: 10px;
+  border-color: rgb(19, 67, 210);
 }
 
 .title{
@@ -29,7 +39,10 @@
 }
 
 .payment-options {
+    display: flex;
+    justify-content: center;
     color: black;
+    gap: 20px;
 }
 
 .actionButtons {
