@@ -1,6 +1,7 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import "./Checkout.css";
 import { useState } from "react";
+import NavBar from "../components/NavBar";
 
 export default function Checkout() {
   const location = useLocation();
@@ -58,6 +59,9 @@ export default function Checkout() {
 
   return (
     <>
+      <NavBar
+      hideCartButton={true}
+      />
       <div className="checkout-container">
         <h2 className="title">Checkout</h2>
           {itemsCheckout.map((item) => (

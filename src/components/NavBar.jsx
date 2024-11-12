@@ -16,6 +16,7 @@ export default function NavBar({
 
   const location = useLocation();
   const isDetailsPage = location.pathname.includes("/products/");
+  const isCheckoutPage = location.pathname.includes("/checkout");
 
   const handleBackClick = () => {
     navigate(-1);
@@ -30,7 +31,7 @@ export default function NavBar({
               VOLTAR
             </button>
           </li>
-          <li className={isDetailsPage ? "shopcart-centered" : "title-navbar"}>
+          <li className={isDetailsPage ? "shopcart-centered" : "title-navbar" && isCheckoutPage ? "shopcart-center" : "title-navbar"}>
             <strong>ShopCart</strong>
           </li>
           {!hideCartButton && (
