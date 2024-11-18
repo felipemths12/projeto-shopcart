@@ -40,18 +40,6 @@ export default function Checkout() {
       .toFixed(2);
   };
 
-  const handleCheckboxPix = () => {
-    setIsCheckedPix(!isCheckedPix);
-  };
-
-  const handleCheckboxCC = () => {
-    setIsCheckedCC(!isCheckedCC);
-  };
-
-  const handleCheckboxBol = () => {
-    setIsCheckedBol(!isCheckedBol);
-  };
-
   const handleFinish = () => {
     alert("Compra finalizada com sucesso");
     finish("/products");
@@ -107,7 +95,7 @@ export default function Checkout() {
               <input
                 type="checkbox"
                 checked={isCheckedPix}
-                onChange={handleCheckboxPix}
+                onChange={() => setIsCheckedPix(!isCheckedPix)}
                 name="PIX"
                 id="pix"
               />{" "}
@@ -117,7 +105,7 @@ export default function Checkout() {
               <input
                 type="checkbox"
                 checked={isCheckedCC}
-                onChange={handleCheckboxCC}
+                onChange={() => setIsCheckedCC(!isCheckedCC)}
                 name="credit-card"
                 id="credit-card"
               />{" "}
@@ -127,7 +115,7 @@ export default function Checkout() {
               <input
                 type="checkbox"
                 checked={isCheckedBol}
-                onChange={handleCheckboxBol}
+                onChange={() => setIsCheckedBol(!isCheckedBol)}
                 name="boleto"
                 id="boleto"
               />
