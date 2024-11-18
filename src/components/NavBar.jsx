@@ -1,4 +1,4 @@
-import "./Navbar.css";
+import "./NavBar.css";
 import { useLocation, useNavigate } from "react-router-dom";
 
 export default function NavBar({
